@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Plant extends Model
+{
+    protected $table = 'plants';
+
+    protected $fillable = [
+    'user_id',
+    'category_id',
+    'name',
+    'price',
+    'stock',
+    'description',
+];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+}
