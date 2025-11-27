@@ -1,5 +1,5 @@
 
-````markdow
+
  🌱 Plantify
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,7 +11,7 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau in
 
 ---
 
-## 🚀 Fitur Utama
+🚀 Fitur Utama
 - **CRUD Tanaman**: Tambah, lihat, edit, dan hapus data tanaman.  
 - **Upload Gambar Tanaman**  
 - **Dashboard Ringkas**  
@@ -21,7 +21,7 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau in
 
 ---
 
-## 🛠 Teknologi yang Digunakan
+🛠 Teknologi yang Digunakan
 - Laravel (Framework PHP)  
 - Blade (Template Engine)  
 - MySQL / PostgreSQL (Database)  
@@ -30,10 +30,11 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau in
 
 ---
 
-## 📦 Instalasi
+ 📦 Instalasi
 Ikuti langkah berikut untuk menjalankan project ini di lokal:
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/username/plantify.git
 cd plantify
