@@ -133,6 +133,3 @@ Project ini menggunakan lisensi **MIT** – bebas digunakan dan dikembangkan.
 
 ```
 
-
-Apakah mau saya buatkan versi itu juga?
-```
