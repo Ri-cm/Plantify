@@ -6,7 +6,7 @@
 [![Laravel Version](https://img.shields.io/badge/Laravel-10.x-orange)](https://laravel.com/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.2-blue)](https://www.php.net/)
 
-**Plantify** adalah aplikasi manajemen tanaman berbasis web yang dibangun menggunakan **Laravel**.  
+Plantify adalah aplikasi manajemen tanaman berbasis web yang dibangun menggunakan **Laravel**.  
 Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau informasi tanaman dengan mudah.
 
 ---
