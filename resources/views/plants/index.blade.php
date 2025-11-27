@@ -4,83 +4,135 @@
 
 @section('content')
 
-<h2>Daftar Tanaman</h2>
+<div class="container py-4">
 
-<!-- Tombol Tambah + Export PDF + Export Excel -->
-<a href="/plants/create" class="btn" 
-   style="background:#43a047; color:white; padding:8px 14px; border-radius:5px; text-decoration:none;">
-    Tambah Tanaman
-</a>
+    {{-- HEADER --}}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">Daftar Tanaman</h2>
+            <p class="text-muted">Kelola data tanaman dengan tampilan premium & modern</p>
+        </div>
 
-<a href="{{ route('plants.export.pdf') }}" 
-   class="btn" 
-   style="background:#e53935; color:white; padding:8px 14px; border-radius:5px; text-decoration:none; margin-left:10px;">
-    Export PDF
-</a>
+        <div>
+            <a href="/plants/create" class="btn btn-success shadow-sm me-2">
+                <i class="fas fa-plus me-2"></i> Tambah Tanaman
+            </a>
 
-<a href="{{ route('plants.export.excel') }}" 
-   class="btn" 
-   style="background:#1e88e5; color:white; padding:8px 14px; border-radius:5px; text-decoration:none; margin-left:10px;">
-    Export Excel
-</a>
+            <a href="{{ route('plants.export.pdf') }}" class="btn btn-danger shadow-sm me-2">
+                <i class="fas fa-file-pdf me-2"></i> Export PDF
+            </a>
 
-<br><br>
+            <a href="{{ route('plants.export.excel') }}" class="btn btn-primary shadow-sm">
+                <i class="fas fa-file-excel me-2"></i> Export Excel
+            </a>
+        </div>
+    </div>
 
-<!-- Search & Filter Form -->
-<div class="card">
-    <form method="GET" action="/plants">
 
-        <label>Cari Nama:</label><br>
-        <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Cari tanaman...">
-        <br><br>
+    {{-- SEARCH & FILTER --}}
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
 
-        <label>Filter Kategori:</label><br>
-        <select name="category_id">
-            <option value="">-- Semua Kategori --</option>
-            @foreach($categories as $c)
-                <option value="{{ $c->id }}" 
-                    @if(isset($category_id) && $category_id == $c->id) selected @endif>
-                    {{ $c->name }}
-                </option>
-            @endforeach
-        </select>
-        <br><br>
+            <form method="GET" action="/plants" class="row g-3 align-items-end">
 
-        <button class="btn" type="submit">Cari</button>
-    </form>
+                <div class="form-row">
+    <div class="form-group half">
+        <label>Nama Tanaman</label>
+        <div class="input-wrapper">
+            <i class="fas fa-leaf"></i>
+            <input type="text" name="name">
+        </div>
+    </div>
+
+    <div class="form-group half">
+        <label>Kategori</label>
+        <div class="input-wrapper">
+            <select name="category_id" class="no-icon">
+                @foreach($categories as $c)
+                    <option value="{{ $c->id }}">{{ $c->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
 </div>
 
-<br>
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Nama</th>
-        <th>Kategori</th>
-        <th>Harga</th>
-        <th>Stok</th>
-        <th>Aksi</th>
-    </tr>
+                <div class="col-md-4">
+                    <button class="btn btn-success w-100 shadow-sm">
+                        <i class="fas fa-search me-2"></i> Cari
+                    </button>
+                </div>
 
-    @foreach($data as $p)
-    <tr>
-        <td>{{ $p->id }}</td>
-        <td>{{ $p->name }}</td>
-        <td>{{ $p->category->name }}</td>
-        <td>Rp {{ number_format($p->price) }}</td>
-        <td>{{ $p->stock }}</td>
-        <td>
-            <a href="/plants/{{ $p->id }}/edit">Edit</a> |
-            <a href="/plants/{{ $p->id }}/delete" onclick="return confirm('Hapus tanaman ini?')">Hapus</a>
-        </td>
-    </tr>
-    @endforeach
-</table>
+            </form>
 
-<!-- =============================== -->
-<!-- PAGINATION LINK (STEP 2)        -->
-<!-- =============================== -->
-<br>
-{{ $data->links() }}
+        </div>
+    </div>
+
+
+    {{-- TABEL DATA TANAMAN --}}
+    <div class="card shadow border-0">
+        <div class="card-body p-0">
+
+            <table class="table table-hover table-striped mb-0 align-middle">
+                <thead class="table-success">
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th>Nama Tanaman</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @forelse($data as $p)
+                    <tr>
+                        <td class="text-center fw-semibold">{{ $p->id }}</td>
+                        <td>
+                            <strong>{{ $p->name }}</strong>
+                        </td>
+                        <td>
+                            <span class="badge bg-success">{{ $p->category->name }}</span>
+                        </td>
+                        <td>Rp {{ number_format($p->price) }}</td>
+                        <td>{{ $p->stock }}</td>
+                        <td class="text-center">
+
+                            <a href="/plants/{{ $p->id }}/edit" 
+                               class="btn btn-warning btn-sm me-2">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+
+                            <a href="/plants/{{ $p->id }}/delete" 
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Hapus tanaman ini?')">
+                                <i class="fas fa-trash"></i> Hapus
+                            </a>
+
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center py-4 text-muted">
+                            <i class="fas fa-leaf fa-2x mb-2 d-block"></i>
+                            Tidak ada data tanaman ditemukan.
+                        </td>
+                    </tr>
+                    @endforelse
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+    {{-- PAGINATION --}}
+    <div class="mt-3">
+        {{ $data->links('pagination::bootstrap-5') }}
+    </div>
+
+</div>
 
 @endsection

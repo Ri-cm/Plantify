@@ -1,0 +1,135 @@
+/* =========================================
+   PREMIUM PLANT MANAGEMENT UI STYLE
+   ========================================= */
+
+/* Global Typography & Layout */
+body {
+    background: #f5f8f5; 
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+/* Card Premium */
+.card {
+    border-radius: 14px !important;
+    overflow: hidden;
+}
+
+.card.shadow-sm {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07) !important;
+}
+
+/* Button Soft Premium */
+.btn {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    padding: 8px 14px;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+/* Icon Style */
+.bi {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* Table Styling */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.table tbody tr:hover {
+    background: #f1f8f4 !important;
+}
+
+/* Badge Category */
+.badge.bg-success {
+    background: #43a047 !important;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+/* Search Card */
+.card form input,
+.card form select {
+    border-radius: 8px !important;
+    height: 45px;
+}
+
+.card form label {
+    color: #2e7d32;
+    font-size: 14.5px;
+}
+
+/* Pagination */
+.pagination .page-link {
+    border-radius: 8px !important;
+    color: #388e3c !important;
+}
+
+.pagination .active .page-link {
+    background: #43a047 !important;
+    border-color: #43a047 !important;
+    color: #fff !important;
+}
+
+/* Header Image */
+.card-img-top {
+    filter: brightness(0.92);
+    transition: 0.3s ease-in-out;
+}
+
+.card-img-top:hover {
+    filter: brightness(1);
+}
+
+/* Action Buttons in Table */
+.btn-warning {
+    background-color: #ffb300 !important;
+    border: none !important;
+}
+
+.btn-danger {
+    background-color: #e53935 !important;
+    border: none !important;
+}
+
+.btn-warning:hover {
+    background-color: #ffa000 !important;
+}
+
+.btn-danger:hover {
+    background-color: #c62828 !important;
+}
+
+/* Responsive Improvements */
+@media(max-width: 768px){
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

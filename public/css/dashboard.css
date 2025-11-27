@@ -1,0 +1,65 @@
+/* HEADER */
+.header-icon {
+    opacity: 0.8;
+}
+
+/* STATISTICS CARD */
+.stat-card {
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.12);
+}
+
+.stat-icon {
+    font-size: 40px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* DECO IMAGE (icon dekorasi sudut) */
+.deco-img {
+    width: 70px;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    opacity: 0.18;
+}
+
+/* CHART CARD */
+.chart-card {
+    border-radius: 20px;
+}
+
+.chart-wrapper {
+    height: 360px;
+}
+
+/* Chart icon */
+.chart-icon {
+    opacity: 0.85;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .stat-value {
+        font-size: 26px;
+    }
+
+    .stat-icon {
+        font-size: 32px;
+    }
+
+    .chart-wrapper {
+        height: 280px;
+    }
+
+    .deco-img {
+        width: 55px;
+    }
+}
