@@ -12,8 +12,7 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau in
 ---
 
 🚀 Fitur Utama
-- **CRUD Tanaman**: Tambah, lihat, edit, dan hapus data tanaman.  
-- **Upload Gambar Tanaman**  
+- **CRUD Tanaman**: Tambah, lihat, edit, dan hapus data tanaman.    
 - **Dashboard Ringkas**  
 - **Validasi Form Otomatis**  
 - **Sistem Autentikasi Laravel**  
