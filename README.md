@@ -1,6 +1,6 @@
 
 ````markdow
-# 🌱 Plantify
+ 🌱 Plantify
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Laravel Version](https://img.shields.io/badge/Laravel-10.x-orange)](https://laravel.com/)
@@ -22,11 +22,11 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, mengelola, dan memantau in
 ---
 
 ## 🛠 Teknologi yang Digunakan
-- **Laravel** (Framework PHP)  
-- **Blade** (Template Engine)  
-- **MySQL / PostgreSQL** (Database)  
-- **Bootstrap / Tailwind CSS** (UI Framework)  
-- **Laragon / XAMPP** (Server Lokal)
+- Laravel (Framework PHP)  
+- Blade (Template Engine)  
+- MySQL / PostgreSQL (Database)  
+- Bootstrap / Tailwind CSS (UI Framework)  
+- Laragon / XAMPP (Server Lokal)
 
 ---
 
